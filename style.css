@@ -1,111 +1,187 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    background-color: #ECF0F1;
+    margin: 0;
+    padding: 0;
 }
 
-/* style for header */
-.header {
+#header {
     display: flex;
-    background-color: #218C74;
-    width: 100%;
-    padding-top: 1rem;
-    padding-left: 1.5rem;
-    color: white;
-    /* position:fixed; */
+    background-color: #fff;
+    position: sticky;
     top: 0;
-    font-family: 'Times New Roman', Times, serif;
+    z-index: 100;
+    width: fit-content;
 }
 
-.header p {
-    padding: 0.6rem;
-    width: auto;
-    background-color: #218C74;
-}
-
-#home {
-    background-color: #ECF0F1;
-    color: #218C74;
-}
-
-/* style for button container */
-.btn-container {
-    display: inline;
+#header>b {
+    padding: 5px;
     text-align: center;
-    align-items: center;
+    min-width: 100px;
+    border: 1px solid #dfe4e9;
 }
 
-button {
-    margin-inline: 0.2rem;
-    padding: 0.2rem;
+#header>b:first-child {
+    position: sticky;
+    background-color: #bebcbc;
+    left: 0;
+}
+
+.row {
+    display: flex;
+}
+
+.row>b,
+.row>div {
+    padding: 5px;
+    min-width: 100px;
+    border: 1px solid #dfe4e9;
+}
+
+
+.row>b:first-child {
+    text-align: center;
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+}
+
+#body {
+    width: fit-content;
+    background-color: #ffffff;
+}
+
+.footer{
+    height: 30px;
+    background-color: rgb(222, 214, 214);
+}
+
+/* #options {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    flex-direction: column;
+} */
+
+#active-cell {
+    padding: 3px 15px;
+    background-color: #fff;
+}
+
+#menus {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 0;
+    padding-inline: 20px;
+    background-color: #ecf0f1;
+}
+#bottom-bar{
+    background-color: #ecf0f1;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-inline: 20px;
+    gap: 30px;
+}
+
+#bottom-bar > input {
+    border: none;
+    outline: none;
+    padding-inline: 2px;
+    height: 80%;
+    width: 100%;
+}
+.formula-icon{
+    height: 22px;
+    width: 22px;
+}
+
+#active-cell{
+    background-color: white;
+    padding-inline: 20px;
+}
+
+.text-color>input,
+.bg-color>input {
+    position: relative;
+}
+
+.text-color>input,
+.bg-color>input {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+#menus>span,
+#menus>div {
+    padding: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#menus>span:hover,
+#menus>div:hover {
+    background-color: rgb(220, 228, 228);
+}
+
+.active-option {
+    background: rgb(207, 211, 211);
+}
+
+#tool {
+    background-color:  #218c74;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 101;
+}
+
+.dropbtn {
+    /* margin-top: 40%; */
+    background-color: transparent;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
 }
 
-select {
-    padding: 5px;
-    border: 1px solid rgb(185, 182, 182);
-    border-radius: 5px;
-    background-color: white;
-    outline: none;
+.active .dropbtn {
+    background-color: #ecf0f1;
 }
 
-
-
-/* style for cell ID container */
-.cell-id-div {
-    background-color: #ECF0F1;
-    width: 100vw;
-    margin: 5px 10px;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+/* Set the background color to "aqua" */
+.dropdown:hover .dropbtn {
+    background-color: aqua;
 }
 
-#current-cell-heading {
-    background-color: white;
-    padding: 0.4rem;
-    width: 3rem;
-    padding-inline: 20px;
-    text-align: center;
+.dropdown:hover .dropbtn,
+.dropdown-content a:hover {
+    background-color: #ecf0f1;
+    color: black;
+    height: fit-content;
 }
 
-#fx-input {
-    width: 88%;
-    border: none;
-    background-color: white;
-    /* margin-left: 10px; */
-    padding: 0.4rem;
+/* Dropdown content container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-#fx-input:focus {
-    border: none;
-    outline: none;
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
 }
 
-/* style for table container */
-.table-container {
-    overflow: auto;
-    width: 100%;
-}
-
-table {
-    border: 1px solid rgb(113, 111, 111);
-    border-collapse: collapse;
-
-}
-
-td,
-th {
-    border: 0.5px solid rgb(103, 99, 99);
-    min-width: 80px;
-    padding: 0.3rem;
-}
-
-td {
-    outline: none;
-}
-
-#empty-first-th {
-    background-color: rgb(141, 141, 141);
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
